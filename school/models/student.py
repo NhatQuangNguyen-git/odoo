@@ -132,6 +132,7 @@ class StudentStudent(models.Model):
     student_code = fields.Char("Student Code", help="Enter student code")
     contact_phone = fields.Char("Phone no.", help="Enter student phone no.")
     contact_mobile = fields.Char("Mobile no", help="Enter student mobile no.")
+    identity_num = fields.Char("identity_num", help="CanCuocCongDan") #Tamlo
     roll_no = fields.Integer(
         "Roll No.", readonly=True, help="Enter student roll no."
     )
@@ -160,7 +161,6 @@ class StudentStudent(models.Model):
     )
     middle = fields.Char(
         "Middle Name",
-        required=True,
         states={"done": [("readonly", True)]},
         help="Enter student middle name",
     )
@@ -487,10 +487,8 @@ class StudentStudent(models.Model):
             )
             stu_code = ir_sequence.next_by_code("student.code")
             student_code = (
-                str(rec.school_id.code)
-                + str("/")
-                + str(rec.year.code)
-                + str("/")
+                str(rec.year.code)
+                + str(rec.medium_id.code)
                 + str(stu_code)
             )
             rec.write(

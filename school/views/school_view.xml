@@ -689,6 +689,7 @@
                     <group col="4" colspan="4">
                         <field name="name" placeholder="Name" />
                         <field name="code" placeholder="Code" />
+                        <field name="Credit" placeholder="Credit" />
                         <field name="maximum_marks" placeholder="Maximum Marks"/>
                         <field name="minimum_marks" placeholder="Minimum Marks"/>
                         <field name="is_practical" />

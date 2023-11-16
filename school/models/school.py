@@ -494,6 +494,7 @@ class SubjectSubject(models.Model):
 
     name = fields.Char("Name", required=True, help="Subject name")
     code = fields.Char("Code", required=True, help="Subject code")
+    Credit = fields.Integer("Credit", required=True, help="Subject credit")
     maximum_marks = fields.Integer(
         "Maximum marks", help="Maximum marks of the subject can get"
     )
@@ -783,7 +784,7 @@ class StudentReference(models.Model):
     )
     name = fields.Char("First Name", required=True, help="Student name")
     middle = fields.Char(
-        "Middle Name", required=True, help="Student middle name"
+        "Middle Name",help="Student middle name"
     )
     last = fields.Char("Surname", required=True, help="Student last name")
     designation = fields.Char(
